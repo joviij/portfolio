@@ -3,10 +3,11 @@
   "description": "Portfolio",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
-    "growl": "^1.10.5"
+    "growl": "^1.10.5",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "wct-browser-legacy": "^1.0.1"
+    "wct-browser-legacy": "^1.0.2"
   }
 }
