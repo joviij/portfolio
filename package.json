@@ -1,0 +1,12 @@
+{
+  "name": "portfolio",
+  "description": "Portfolio",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "growl": "^1.10.5"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1"
+  }
+}

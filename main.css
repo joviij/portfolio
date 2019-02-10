@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inconsolata', monospace;
+}
+
+.loading {
+    opacity: 0;
+}
