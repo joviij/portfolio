@@ -22,13 +22,25 @@
 			<folder-box>
 				<section slot="folders">
 					<custom-folder
-						folder-name="test"
-						files='["test1", "test2", "test3"]'
+						folder-name="About Me"
+						files='["about-me.js"]'
+					></custom-folder>
+					<custom-folder
+						folder-name="Contact"
+						files='["contact.js"]'
 					></custom-folder>
 				</section>
 				<section slot="folder-content">
-					<cool-card card-id="test1">test1adfaf</cool-card>
-					<cool-card card-id="test2">test2</cool-card>
+					<cool-card card-id="about-me">
+                        Currently a software engineer at General Motors. Previously,
+                        a computer science student at ASU. <br><br>I am always looking 
+                        to learn new things and be part of something exciting. Feel free to contact
+                        me regarding any questions or any new opportunities.
+                    </cool-card>
+					<cool-card card-id="contact">
+                        The easiest way to get in touch with me is via my email at 
+                        <strong>jamesjovin23@gmail.com</strong>
+                    </cool-card>
 					<cool-card card-id="test3">test3</cool-card>
 				</section>
 			</folder-box>

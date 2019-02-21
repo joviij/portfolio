@@ -79,7 +79,8 @@ class FolderBox extends PolymerElement {
 	}
 
 	processCard(e) {
-		let id = e.detail.cardName;
+		let id = e.detail.cardName.replace(/.js/g, '');
+        console.log(id);
 		if (this.cardMap.hasOwnProperty(id) && id !== this.previousCard) {
 			if (this.cardMap.hasOwnProperty(this.previousCard)) {
 				this.cardMap[this.previousCard].removeAttribute('visible');
