@@ -5,6 +5,18 @@
       "polymer-3"
     ]
   },
+  "entrypoint": "index.html",
+  "shell": "appLoad.js",
+  "sources": [
+    "src/**.js",
+    "assets/**/*",
+    "manifest/**",
+    "package.json"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/**"
+  ],
   "builds": [
     {
       "name": "prod",
