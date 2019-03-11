@@ -4,5 +4,21 @@
     "rules": [
       "polymer-3"
     ]
-  }
+  },
+  "builds": [
+    {
+      "name": "prod",
+      "preset": "es6-unbundled",
+      "js": {"minify": true},
+      "css": {"minify": true}
+    },
+    {
+      "name": "dev",
+      "js": {"minify": false, "compile": false},
+      "css": {"minify": false},
+      "html": {"minify": false},
+      "bundle": false,
+      "addPushManifest": false
+    }
+  ]
 }
