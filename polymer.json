@@ -1,36 +1,38 @@
 {
-  "npm": true,
-  "lint": {
-    "rules": [
-      "polymer-3"
-    ]
-  },
-  "entrypoint": "index.html",
-  "shell": "appLoad.js",
-  "sources": [
-    "src/**.js",
-    "assets/**/*",
-    "manifest/**",
-    "package.json"
-  ],
-  "extraDependencies": [
-    "manifest.json",
-    "node_modules/@webcomponents/webcomponentsjs/bundles/**"
-  ],
-  "builds": [
-    {
-      "name": "prod",
-      "preset": "es6-unbundled",
-      "js": {"minify": true},
-      "css": {"minify": true}
+    "npm": true,
+    "lint": {
+        "rules": [
+        "polymer-3"
+        ]
     },
-    {
-      "name": "dev",
-      "js": {"minify": false, "compile": false},
-      "css": {"minify": false},
-      "html": {"minify": false},
-      "bundle": false,
-      "addPushManifest": false
-    }
-  ]
+    "entrypoint": "index.html",
+    "shell": "appLoad.js",
+    "sources": [
+        "src/**/*",
+        "assets/**/*",
+        "package.json",
+        "main.css"
+    ],
+    "extraDependencies": [
+        "manifest.json",
+        "node_modules/@webcomponents/webcomponentsjs/bundles/**",
+        "node_modules/@polymer/polymer/**",
+        "node_modules/@webcomponents/shadycss/**"
+    ],
+    "builds": [
+        {
+            "name": "prod",
+            "preset": "es6-unbundled",
+            "js": {"minify": true},
+            "css": {"minify": true}
+        },
+        {
+            "name": "dev",
+            "js": {"minify": false, "compile": false},
+            "css": {"minify": false},
+            "html": {"minify": false},
+            "bundle": false,
+            "addPushManifest": false
+        }
+    ]
 }
