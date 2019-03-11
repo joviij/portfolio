@@ -11,7 +11,8 @@
         "src/**/*",
         "assets/**/*",
         "package.json",
-        "main.css"
+        "main.css",
+        ".nojekyll"
     ],
     "extraDependencies": [
         "manifest.json",
