@@ -2,26 +2,34 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
 class FolderBox extends PolymerElement {
 	static get template() {
+		// only show the folder box setup on screens big enough (> 768px)
 		return html`
 			<style>
-				.folder-box {
-					display: flex;
-					margin: auto;
-					width: 60%;
-					height: 500px;
-					justify-content: center;
-					align-content: basline;
-					background-color: #1a1c21;
-				}
-
 				::slotted([slot=folders]) {
-					border-right: 4px solid #00ff43;
-					flex: .5 1 auto;
-					padding: 10px;
+					display: none;
 				}
 
-				::slotted([slot=folder-content]) {
-					flex: 2 1 0;
+				@media only screen and (min-width: 768px) {
+					.folder-box {
+						display: flex;
+						margin: auto;
+						width: 60%;
+						height: 500px;
+						justify-content: center;
+						align-content: basline;
+						background-color: #1a1c21;
+					}
+
+					::slotted([slot=folders]) {
+						display: block;
+						border-right: 4px solid #00ff43;
+						flex: .5 1 auto;
+						padding: 10px;
+					}
+
+					::slotted([slot=folder-content]) {
+						flex: 2 1 0;
+					}
 				}
 			</style>
             <section class="folder-box">
@@ -34,7 +42,7 @@ class FolderBox extends PolymerElement {
 	static get properties() {
 		return {
 			showCard: {
-				value: 'TESTVAL',
+				value: '',
 				type: String
 			}
 		};
@@ -46,6 +54,7 @@ class FolderBox extends PolymerElement {
 		this.cardMap = {};
 		this.previousCard = '';
 
+		// attach event listener to folder box that will display the correct card when filename is clicked. 
 		this.addEventListener('showCard', (e) => {
 			this.processCard(e);
 		});
@@ -53,6 +62,8 @@ class FolderBox extends PolymerElement {
 
 	connectedCallback() {
 		super.connectedCallback();
+
+		// Event used to ensure that the page should only show the body after folder box has been rendered. 
 		var loadedEvent = new CustomEvent('box-loaded', {bubbles: true, composed: true});
 		this.dispatchEvent(loadedEvent);
 	}
@@ -72,6 +83,8 @@ class FolderBox extends PolymerElement {
 	}
 
 	initMap() {
+		// store card-id in a map so that it can be referenced faster in future calls. 
+
 		this.__cards__.forEach((card, index, obj) => {
 			let key = card.getAttribute('card-id');
 			this.cardMap[key] = card;
@@ -79,8 +92,9 @@ class FolderBox extends PolymerElement {
 	}
 
 	processCard(e) {
+		// Will show the appropriate cool-card based on the file that was selected.
+
 		let id = e.detail.cardName.replace(/.js/g, '');
-        console.log(id);
 		if (this.cardMap.hasOwnProperty(id) && id !== this.previousCard) {
 			if (this.cardMap.hasOwnProperty(this.previousCard)) {
 				this.cardMap[this.previousCard].removeAttribute('visible');

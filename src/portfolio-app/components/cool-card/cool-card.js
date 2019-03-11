@@ -10,11 +10,18 @@ class CoolCard extends PolymerElement {
                     color: black;
                     padding: 10px;
                     box-sizing: border-box;
-                    display: none;
+                    margin-top: 10px;
                 }
+        
+				@media only screen and (min-width: 768px) {
+                    .cool-card {
+                        display: none;
+                        margin-top: 0px;
+                    }
 
-                .visible {
-                    display: block;
+                    .visible {
+                        display: block;
+                    }
                 }
             </style>
             <div class="cool-card">
