@@ -20,9 +20,6 @@ class CustomFolder extends PolymerElement {
                 overflow: hidden;
                 transition: max-height 0.2s ease-in;
                 max-height: 0px;
-            }
-
-            .files li {
                 list-style: none;
             }
 

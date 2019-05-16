@@ -16,7 +16,7 @@ class HeaderSection extends PolymerElement {
 
 			</style>
 			<section class="header-section">
-				Jovin James
+				<slot></slot>
 			</section>
 		`;
 	}
