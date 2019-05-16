@@ -16,15 +16,6 @@ body {
     text-decoration: none;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0px;
-}
-
-.footer img {
+custom-footer img {
     width: 20px;
 }

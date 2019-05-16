@@ -52,11 +52,7 @@ class FolderBox extends PolymerElement {
     super();
     this.__cards__ = null;
     this.cardMap = {};
-    this.previousCard = ''; // attach event listener to folder box that will display the correct card when filename is clicked. 
-
-    this.addEventListener('showCard', e => {
-      this.processCard(e);
-    });
+    this.previousCard = '';
   }
 
   connectedCallback() {
@@ -76,7 +72,11 @@ class FolderBox extends PolymerElement {
 
 
   ready() {
-    super.ready();
+    super.ready(); // attach event listener to folder box that will display the correct card when filename is clicked. 
+
+    this.addEventListener('showCard', e => {
+      this.processCard(e);
+    });
     this.__contentSlot__ = this.shadowRoot.querySelectorAll('slot')[1];
     this.__contentSlot__ = this.shadowRoot.querySelector('slot[name=folder-content]');
     this.__cards__ = this.__contentSlot__.assignedNodes()[0].querySelectorAll('cool-card');
