@@ -48,7 +48,6 @@ class CustomFooter extends PolymerElement {
     // might be fixable with css media queries instead. 
     adjustFooterPosition() {
         let __footer__ = this.shadowRoot.querySelector(".footer");
-        console.log("dasdf")
         if (window.outerHeight - 60 < this.__content__.getBoundingClientRect().bottom) {
             __footer__.classList.add('position-relative');
         }
@@ -56,7 +55,6 @@ class CustomFooter extends PolymerElement {
         clearTimeout(this.finishedResize);
         this.finishedResize = setTimeout(() => {
             if (window.outerHeight - 60 > this.__content__.getBoundingClientRect().bottom) {
-                console.log(__footer__);
                 __footer__.classList.remove('position-relative');
             }
         }, 100);
